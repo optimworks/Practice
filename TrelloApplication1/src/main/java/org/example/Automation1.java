@@ -8,7 +8,7 @@ public class Automation1 {
         System.setProperty("webdriver.chrome.driver", "D:\\practiceGitHub\\Practice\\TrelloApplication1\\chromedriver_win32\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        driver.get("https://qa-test-environment-stripe.internal.qa.us-east-1.advance.graduway.com/campaigns/campaign-a-1");
+        driver.get("URL");
         driver.manage().window().maximize();
         System.out.println(driver.getTitle());
         driver.findElement(By.xpath("(//button[text()='MAKE A GIFT'])[1]")).click();
