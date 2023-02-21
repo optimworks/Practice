@@ -1,0 +1,13 @@
+name: Automation
+on: push
+jobs: 
+  test:
+    runs-on: ubuntu-latest
+    steps :
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm install
+      - name: Install playwright
+        run: npm init playwright@latest
+      - name: Run tests
+        run: npm run firefox
