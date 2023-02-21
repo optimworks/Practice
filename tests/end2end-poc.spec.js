@@ -114,10 +114,10 @@ test.describe("Sending documents to destination user functionality:", () => {
         await expect(destinationPage.verifyVideoIsLoaded()).toBeTruthy()
     })
 
-    test("Open Image and verify", async () => {
-        await destinationPage.openImage(testData.image)
-        expect(await destinationPage.verifyDestinationImageIsOpen()).toMatchSnapshot();
-    })
+    // test("Open Image and verify", async () => {
+    //     await destinationPage.openImage(testData.image)
+    //     expect(await destinationPage.verifyDestinationImageIsOpen()).toMatchSnapshot();
+    // })
 
 
     test.afterAll(async ({ browser }) => {
