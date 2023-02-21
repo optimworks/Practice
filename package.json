@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "regression": "npx playwright test",
-    "chrome": "npx playwright test tests/affiliation.spec.js --reporter=line,allure-playwright --project=chromium",
-    "firefox": "npx playwright test tests/affiliation.spec.js --reporter=line,allure-playwright --project=firefox",
-    "safari": "npx playwright test tests/affiliation.spec.js --reporter=line,allure-playwright --project=webkit",
+    "chrome": "npx playwright test tests/end2end-poc.spec.js --reporter=line,allure-playwright --project=chromium",
+    "firefox": "npx playwright test tests/end2end-poc.spec.js --reporter=line,allure-playwright --project=firefox",
+    "safari": "npx playwright test tests/end2end-poc.spec.js --reporter=line,allure-playwright --project=webkit",
     "generateReport": "allure generate ./allure-results --clean",
     "openReport": "allure open allure-report",
     "playwrightInspector": "npx playwright test tests/emlen-poc.spec.js --debug",
