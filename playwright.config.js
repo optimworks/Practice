@@ -4,7 +4,7 @@ const { devices } = require('@playwright/test');
 
 const config = {
   testDir: './tests',
-  retries : 1,
+  //retries : 1,
   /* Maximum time one test can run for. */
   timeout: 90 * 1000,
   expect: {
@@ -42,7 +42,7 @@ const config = {
       use: {
         //viewport : null,
         browserName: "firefox",
-        headless: true,
+        headless: false,
         screeshot: 'only-on-failure',
         trace: 'retain-on-failure', //'on', 'off'
         video: 'on-first-retry',

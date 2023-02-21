@@ -50,7 +50,7 @@ test.describe("Smoke test Sending documents to destination user functionality:",
         await dashboardPage.goToContentHub(testData.contentHub)
         await expect(contentHubPage.getContentHubHeader()).toHaveText('Content Hub')
     })
-    test("Test1", async () => {
+    test("Test5", async () => {
         
     })
     test("Test2", async () => {
