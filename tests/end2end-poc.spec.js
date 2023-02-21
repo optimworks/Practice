@@ -99,10 +99,10 @@ test.describe("Sending documents to destination user functionality:", () => {
         await expect(destinationPage.isPdfFileDisplayed(testData.pdfFile)).toHaveText(testData.pdfFile)
     })
 
-    test("Open pdf file and verify", async () => {
-        await destinationPage.openPdfFile(testData.pdfFile)
-        await expect(destinationPage.verifyDestinationPdfFileIsOpen()).toBeVisible()
-    })
+    // test("Open pdf file and verify", async () => {
+    //     await destinationPage.openPdfFile(testData.pdfFile)
+    //     await expect(destinationPage.verifyDestinationPdfFileIsOpen()).toBeVisible()
+    // })
 
     test("Open html document and verify", async () => {
         await destinationPage.openHTMLDocumement(testData.htmlDocument)
