@@ -6,7 +6,8 @@
   "scripts": {
     "regression": "npx playwright test",
     "chrome": "npx playwright test tests/end2end-poc.spec.js --reporter=line,allure-playwright --project=chromium",
-    "firefox": "npx playwright test tests/end2end-poc.spec.js --reporter=line,allure-playwright --project=firefox",
+    "firefox1": "npx playwright test tests/end2end-poc.spec.js --reporter=line,allure-playwright --project=firefox",
+    "firefox": "npx playwright test tests/end2end-poc.spec.js --project=firefox",
     "safari": "npx playwright test tests/end2end-poc.spec.js --reporter=line,allure-playwright --project=webkit",
     "generateReport": "allure generate ./allure-results --clean",
     "openReport": "allure open allure-report",
