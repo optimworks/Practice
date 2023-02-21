@@ -9,7 +9,5 @@ jobs:
       - uses: actions/setup-node@v3
       - name: Install playwright
         run: npm install @playwright/test
-      - name: Install playwright browsers
-        run: npx playwright install --with-deps
       - name: Run tests
         run: npm run firefox
