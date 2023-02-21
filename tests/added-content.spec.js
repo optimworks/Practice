@@ -10,7 +10,7 @@ var context, page, poManager, loginPage, dashboardPage, contentHubPage, distribu
 
 test.describe.configure({ mode: 'serial' });
 
-test.describe("Sending documents to destination user functionality:", () => {
+test.describe("@Smoke Sending documents to destination user functionality:", () => {
 
     test.beforeAll(async ({ browser }) => {
         context = await browser.newContext({
@@ -50,13 +50,13 @@ test.describe("Sending documents to destination user functionality:", () => {
         await dashboardPage.goToContentHub(testData.contentHub)
         await expect(contentHubPage.getContentHubHeader()).toHaveText('Content Hub')
     })
-    test("Test", async () => {
+    test("Test1", async () => {
         
     })
-    test("Test", async () => {
+    test("Test2", async () => {
         
     })
-    test("Test", async () => {
+    test("Test3", async () => {
         
     })
 })
