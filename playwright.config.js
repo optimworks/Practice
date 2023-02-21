@@ -42,7 +42,7 @@ const config = {
       use: {
         //viewport : null,
         browserName: "firefox",
-        headless: false,
+        headless: true,
         screeshot: 'only-on-failure',
         trace: 'retain-on-failure', //'on', 'off'
         video: 'on-first-retry',
