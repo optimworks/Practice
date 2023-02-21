@@ -50,4 +50,7 @@ test.describe("Sending documents to destination user functionality:", () => {
         await dashboardPage.goToContentHub(testData.contentHub)
         await expect(contentHubPage.getContentHubHeader()).toHaveText('Content Hub')
     })
+    test("Test", async () => {
+        
+    })
 })
