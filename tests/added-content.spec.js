@@ -10,7 +10,7 @@ var context, page, poManager, loginPage, dashboardPage, contentHubPage, distribu
 
 test.describe.configure({ mode: 'serial' });
 
-test.describe("@Smoke Sending documents to destination user functionality:", () => {
+test.describe("Smoke test Sending documents to destination user functionality:", () => {
 
     test.beforeAll(async ({ browser }) => {
         context = await browser.newContext({
