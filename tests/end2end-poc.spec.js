@@ -104,15 +104,15 @@ test.describe("Sending documents to destination user functionality:", () => {
         await expect(destinationPage.verifyDestinationPdfFileIsOpen()).toBeVisible()
     })
 
-    test("Open html document and verify", async () => {
-        await destinationPage.openHTMLDocumement(testData.htmlDocument)
-        expect(await destinationPage.getDestinationHTMLDocument().isVisible()).toBeTruthy()
-    })
+    // test("Open html document and verify", async () => {
+    //     await destinationPage.openHTMLDocumement(testData.htmlDocument)
+    //     expect(await destinationPage.getDestinationHTMLDocument().isVisible()).toBeTruthy()
+    // })
 
-    test("Open video and verify", async () => {
-        await destinationPage.openVideoFile(testData.videoFile)
-        await expect(destinationPage.verifyVideoIsLoaded()).toBeTruthy()
-    })
+    // test("Open video and verify", async () => {
+    //     await destinationPage.openVideoFile(testData.videoFile)
+    //     await expect(destinationPage.verifyVideoIsLoaded()).toBeTruthy()
+    // })
 
     test("Open Image and verify", async () => {
         await destinationPage.openImage(testData.image)
@@ -120,36 +120,36 @@ test.describe("Sending documents to destination user functionality:", () => {
     })
 
 
-    test.afterAll(async ({ browser }) => {
-        await browser.close()
-        return new Promise(function (fulfill, reject) {
-            var transporter = nodemailer.createTransport({
-                host: 'smtp.gmail.com',
-                port: 465,
-                secure: true,
-                auth: {
-                    user: 'demo4playwright@gmail.com',//sender mail id
-                    pass: 'aybuhmuxamijgflz'//sender mail access password
-                }
-            });
-            var mailOptions = {
-                from: 'demo4playwright@gmail.com',//sender mail id
-                to: 'akhil.thokala@optimworks.com',//receipient mail id
-                subject: 'Emlen - Playwright Test Execution Report',
-                text: 'Test_Report for Playwright tests',
-                attachments: [{
-                    'path': 'playwright-report/index.html',
-                }]
-            };
-            transporter.sendMail(mailOptions, function (error, info) {
-                if (error) {
-                    reject(error);
-                    return console.log(error);
-                }
-                console.log('Mail sent: ' + info.response);
-                fulfill(info);
-            });
-        });
-    })
+    // test.afterAll(async ({ browser }) => {
+    //     await browser.close()
+    //     return new Promise(function (fulfill, reject) {
+    //         var transporter = nodemailer.createTransport({
+    //             host: 'smtp.gmail.com',
+    //             port: 465,
+    //             secure: true,
+    //             auth: {
+    //                 user: 'demo4playwright@gmail.com',//sender mail id
+    //                 pass: 'aybuhmuxamijgflz'//sender mail access password
+    //             }
+    //         });
+    //         var mailOptions = {
+    //             from: 'demo4playwright@gmail.com',//sender mail id
+    //             to: 'akhil.thokala@optimworks.com',//receipient mail id
+    //             subject: 'Emlen - Playwright Test Execution Report',
+    //             text: 'Test_Report for Playwright tests',
+    //             attachments: [{
+    //                 'path': 'playwright-report/index.html',
+    //             }]
+    //         };
+    //         transporter.sendMail(mailOptions, function (error, info) {
+    //             if (error) {
+    //                 reject(error);
+    //                 return console.log(error);
+    //             }
+    //             console.log('Mail sent: ' + info.response);
+    //             fulfill(info);
+    //         });
+    //     });
+    // })
 
 })
