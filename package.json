@@ -1,5 +1,5 @@
 {
-  "name": "day1",
+  "name": "emlen",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,17 +12,21 @@
     "generateReport": "allure generate ./allure-results --clean",
     "openReport": "allure open allure-report",
     "playwrightInspector": "npx playwright test tests/emlen-poc.spec.js --debug",
+    "codeGen": "npx playwright codegen http://google.com",
+    "test": "cross-env test_env='test'; npx playwright test tests/end2end-poc.spec.js"
     "codeGen": "npx playwright codegen http://google.com"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.29.2",
+    "@playwright/test": "^1.31.1",
     "allure-playwright": "^2.0.0-beta.18",
+    "cross-env": "^7.0.3",
     "mailosaur": "^8.4.0"
   },
   "dependencies": {
+    "dotenv": "^16.0.3",
     "edit-json-file": "^1.7.0",
     "nodemailer": "^6.7.5"
   }

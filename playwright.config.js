@@ -4,7 +4,7 @@ const { devices } = require('@playwright/test');
 
 const config = {
   testDir: './tests',
-  retries : 1,
+  //retries : 1,
   /* Maximum time one test can run for. */
   timeout: 90 * 1000,
   expect: {
@@ -63,6 +63,7 @@ const config = {
       },
     },
   ],
+  globalSetup : "utils/globalSetup.js"
 };
 
 module.exports = config;

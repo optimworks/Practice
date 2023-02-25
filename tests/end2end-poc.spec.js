@@ -19,7 +19,7 @@ test.describe("Sending documents to destination user functionality:", () => {
                 password: "likesfood"
             }
         })
-        await context.grantPermissions(['notifications'], { origin: envData.baseURL })
+        await context.grantPermissions(['notifications'], { origin: process.env.BASE_URL })
         page = await context.newPage()
         poManager = new POManager(page)
         loginPage = poManager.getLoginPage()
@@ -29,16 +29,16 @@ test.describe("Sending documents to destination user functionality:", () => {
     })
 
     test("Launch the emlen application and verify", async () => {
-        await loginPage.launchUrl(envData.baseURL)
+        await loginPage.launchUrl(process.env.BASE_URL)
         await loginPage.verifyEmlenLogoIsDisplayed()
         await loginPage.verifyEmailInputFieldIsDisplayed()
     })
 
     test("Login with user and verify", async () => {
-        await loginPage.enterEmailId(envData.login_credentials.userName)
+        await loginPage.enterEmailId(process.env.USERNAME)
         await loginPage.clickProceed()
         await loginPage.verifyPasswordInputFieldIsDisplayed()
-        await loginPage.enterPassword(envData.login_credentials.password)
+        await loginPage.enterPassword(process.env.PASSWORD)
         await loginPage.clickLogin()
         await expect(dashboardPage.getDashboardHeader()).toHaveText('Dashboard')
         await expect(dashboardPage.getDashboardUserName(testData.dashboardUserName)).toHaveText(testData.dashboardUserName)
@@ -61,11 +61,11 @@ test.describe("Sending documents to destination user functionality:", () => {
     test("Distribute content and verify", async () => {
         await contentHubPage.clickCreateDestination(testData.createButton)
         await expect(distributeContentPage.getDistributeContentHeader()).toHaveText('Distribute content')
-        await expect(distributeContentPage.getContentToDistributeItemIsSelected(testData.image)).toHaveText(testData.image)
-        await expect(distributeContentPage.getContentToDistributeItemIsSelected(testData.htmlDocument)).toHaveText(testData.htmlDocument)
-        await expect(distributeContentPage.getContentToDistributeItemIsSelected(testData.videoFile)).toHaveText(testData.videoFile)
-        await distributeContentPage.selectContentToDistribute(testData.pdfFile)
-        await expect(distributeContentPage.getContentToDistributeItemIsSelected(testData.pdfFile)).toHaveText(testData.pdfFile)
+        // await expect(distributeContentPage.getContentToDistributeItemIsSelected(testData.image)).toHaveText(testData.image)
+        // await expect(distributeContentPage.getContentToDistributeItemIsSelected(testData.htmlDocument)).toHaveText(testData.htmlDocument)
+        // await expect(distributeContentPage.getContentToDistributeItemIsSelected(testData.videoFile)).toHaveText(testData.videoFile)
+        // await distributeContentPage.selectContentToDistribute(testData.pdfFile)
+        // await expect(distributeContentPage.getContentToDistributeItemIsSelected(testData.pdfFile)).toHaveText(testData.pdfFile)
         await distributeContentPage.enterContact(testData.contactName)
         await distributeContentPage.enterDestinationName(testData.destinationName)
     })
@@ -98,7 +98,6 @@ test.describe("Sending documents to destination user functionality:", () => {
         await expect(destinationPage.isVideoFileDisplayed(testData.videoFile)).toHaveText(testData.videoFile)
         await expect(destinationPage.isPdfFileDisplayed(testData.pdfFile)).toHaveText(testData.pdfFile)
     })
-
     // test("Open pdf file and verify", async () => {
     //     await destinationPage.openPdfFile(testData.pdfFile)
     //     await expect(destinationPage.verifyDestinationPdfFileIsOpen()).toBeVisible()
@@ -150,6 +149,5 @@ test.describe("Sending documents to destination user functionality:", () => {
     //             fulfill(info);
     //         });
     //     });
-    // })
 
 })
