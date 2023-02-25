@@ -43,6 +43,7 @@ class DistributeContentPage {
             this.personalizationDropdown.click()
         ])
         //await expect(this.name.isEditable()).toBeTruthy()
+        await expect(this.name.isEditable()).toBeTruthy()
         await this.nameInputField.click()
         await this.nameInputField.fill(_name)
     }

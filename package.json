@@ -14,6 +14,7 @@
     "playwrightInspector": "npx playwright test tests/emlen-poc.spec.js --debug",
     "codeGen": "npx playwright codegen http://google.com",
     "test": "cross-env test_env='test'; npx playwright test tests/end2end-poc.spec.js"
+    "codeGen": "npx playwright codegen http://google.com"
   },
   "keywords": [],
   "author": "",
